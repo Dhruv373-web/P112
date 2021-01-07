@@ -1,0 +1,22 @@
+from google.colab import files
+data_to_load = files.upload()
+import pandas as pd
+import statistics
+import plotly.express as px
+
+for data in savings_data:
+  if int(data[3]) == 1:
+    reminded_savings.append(float(data[0]))
+  else:
+    not_reminded_savings.append(float(data[0]))
+
+print("Results for people who were reminded to save")
+print(f"Mean of savings - {statistics.mean(reminded_savings)}")
+print(f"Median of savings - {statistics.median(reminded_savings)}")
+print(f"Mode of savings - {statistics.mode(reminded_savings)}")
+#To add new lines
+print("\n\n")
+print("Results for people who were not reminded to save")
+print(f"Mean of savings - {statistics.mean(not_reminded_savings)}")
+print(f"Median of savings - {statistics.median(not_reminded_savings)}")
+print(f"Mode of savings - {statistics.mode(not_reminded_savings)}")
